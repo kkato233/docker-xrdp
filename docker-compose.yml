@@ -4,8 +4,10 @@ services:
   xrdp:
     image: frxyt/xrdp:latest
     build:
-      #args: 
-      #  - DOCKER_TAG=xfce
+      args: 
+        - DOCKER_TAG=xfce
+        - SOURCE_BRANCH=master
+        - SOURCE_COMMIT=123
       context: .
     ports:
       - "22000:22"
