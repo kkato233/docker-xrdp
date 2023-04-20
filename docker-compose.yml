@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   xrdp:
-    image: frxyt/xrdp:latest
+    image: frxyt/xrdp:ubuntu18.04
     build:
       args: 
         - DOCKER_TAG=xfce

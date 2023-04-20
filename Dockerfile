@@ -2,7 +2,7 @@
 # Copyright (c) 2019 Jérémy WALTHER <jeremy.walther@golflima.net>
 # See <https://github.com/frxyt/docker-xrdp> for details.
 
-FROM debian:buster
+FROM ubuntu:18.04
 
 LABEL maintainer="Jérémy WALTHER <jeremy@ferox.yt>"
 
@@ -66,6 +66,9 @@ RUN     echo "[frxyt/xrdp:${DOCKER_TAG}] <https://github.com/frxyt/docker-xrdp>"
 
 # Copy source files
 COPY Dockerfile LICENSE README.md /frx/
+
+RUN    apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y xfce4 xfce4-terminal
 
 EXPOSE 22
 EXPOSE 3389
